@@ -24,6 +24,8 @@ public class GameModel {
     private LocalDateTime dateTime;
     private int gameScore;
     private int[] lettersUsed;
+
+    private GameScore points;
     
     
     private HangmanDictionary dictionary;
@@ -34,7 +36,7 @@ public class GameModel {
     
     
    
-    public GameModel(HangmanDictionary dictionary){
+    public GameModel(HangmanDictionary dictionary,GameScore points){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
         randomWord = selectRandomWord();
@@ -42,7 +44,13 @@ public class GameModel {
         incorrectCount = 0;
         correctCount = 0;
         gameScore = 100;
+        this.points = points;
         
+    }
+
+    public  void gameScoreCalculator(int correctCount, int incorrectCount){
+        gameScore = this.points.calculateStore(correctCount,incorrectCount);
+
     }
     
     //method: reset
@@ -52,7 +60,7 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = 100;
+        gameScore = this.points.calculateStore(0,0);
     }
 
     //setDateTime
@@ -63,7 +71,7 @@ public class GameModel {
     
     //method: makeGuess
     //purpose: check if user guess is in string. Return a
-    // list of positions if character is found in string
+    // list of positions if character is found in str
     public ArrayList<Integer> makeGuess(String guess){
         char guessChar = guess.charAt(0);
         ArrayList<Integer> positions = new ArrayList<>();
@@ -78,6 +86,7 @@ public class GameModel {
         } else {
             correctCount += positions.size();
         }
+
         return positions;
         
     }

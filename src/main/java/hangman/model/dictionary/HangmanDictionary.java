@@ -18,6 +18,7 @@ public abstract class HangmanDictionary {
     private List<String> availableWords;
 
     public HangmanDictionary() {
+
         characterSet = createCharacterSet();
     }
 

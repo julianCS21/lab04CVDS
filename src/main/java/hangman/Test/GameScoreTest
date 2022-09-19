@@ -1,0 +1,35 @@
+package hangman.Test;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+/**
+ * prubeas unitaras del gameScore
+ */
+public class GameScoreTest
+{
+    /**
+     * Rigorous Test :-)
+     */}
+    private HangmanDictionary d;
+
+
+    @Test(expected = GameScoreException.class)
+    public void Dado_una_cuenta_de_correctas_negativa_y_incorrectas_en_un_bonusScore_debe_arrojar_excepcion()
+    {
+        //arrange
+        d =  new SpanishDictionaryDataSource();
+        GameScore bonus = new BonusScore();
+        GameModel prueba = new GameModel(d,bonus);
+        int correctBonus = -1000;
+        int incorrectBonus  = 50;
+
+        //act
+        prueba.gameScoreCalculator(correctBonus,incorrectBonus);
+
+
+        //assert
+        assertEquals(prueba.getGameScore(),prueba.getGameScore());
+    }
+}
