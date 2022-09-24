@@ -10,12 +10,12 @@ package hangman.model;
 public class OriginalScore implements GameScore{
 	private static int PUNTAJE = 100;
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
+
+
 	public int calculateScore (int correctCount, int incorrectCount) throws GameScoreException{
-		if(correctCount <0 || incorrectCount <0 || incorrectCount > 10)throw new GameScoreException(GameScoreException.PARAMETRO_INVALIDO);
+		if(correctCount <0 || incorrectCount <0 || incorrectCount > 10) {
+			throw new GameScoreException(GameScoreException.PARAMETRO_INVALIDO);
+		}
 		return PUNTAJE + correctCount - incorrectCount*10;
 	}
 }

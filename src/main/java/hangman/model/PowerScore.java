@@ -8,10 +8,8 @@ package hangman.model;
  */
 public class PowerScore implements GameScore{
 	
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
+
+
 	public int calculateScore (int correctCount, int incorrectCount) throws GameScoreException{
 		if(correctCount < 0 || incorrectCount < 0) throw new GameScoreException(GameScoreException.PARAMETRO_INVALIDO);
 		int letraPotencia = 0 ;

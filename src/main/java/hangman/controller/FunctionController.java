@@ -71,7 +71,11 @@ public class FunctionController {
             }
         });
         panel.getPlayButton().addActionListener((ActionEvent e) -> {
-            gameControllerReference.resetGame();
+            try {
+                gameControllerReference.resetGame();
+            } catch (IllegalAccessException ex) {
+                throw new RuntimeException(ex);
+            }
             rootController.changeVisibleCard(GUI.GAME_KEY);
         });
         panel.getHighScoresButton().addActionListener((ActionEvent e) -> {

@@ -56,7 +56,11 @@ public class GameOverController {
         panel.getMenuButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-                gameControllerReference.resetGame();
+                try {
+                    gameControllerReference.resetGame();
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
                 rootController.changeVisibleCard(GUI.FUNCTION_KEY);
             }
         });
@@ -64,7 +68,11 @@ public class GameOverController {
         panel.getResetButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-                gameControllerReference.resetGame();
+                try {
+                    gameControllerReference.resetGame();
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
                 rootController.changeVisibleCard(GUI.GAME_KEY);
             }
         });

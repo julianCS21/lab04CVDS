@@ -78,8 +78,8 @@ public class GUI {
                 new FunctionModel(Color.BLACK, language.getFunctionControllerNames()[0], language.getFunctionControllerNames()[1], language.getFunctionControllerNames()[2]),
                 mainFrameController
         );
-
-        GameModel gameModel = new GameModel(dictionary);
+        GameScore score = new OriginalScore();
+        GameModel gameModel = new GameModel(dictionary,score);
         gameController = new GameController(
                 new GamePanel(gameModel.getCharacterSet(), hangmanPanel, language),
                 gameModel,

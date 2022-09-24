@@ -141,7 +141,7 @@ public class GameController{
     
     //method: resetGame
     //purpose: reset associated view and controller for a new game
-    public void resetGame(){
+    public void resetGame() throws IllegalAccessException {
         model.reset();
         panel.getPoints().setText(lan.getPointsNameLabel()+ Integer.toString(model.getGameScore()));
         panel.addBlanks(model.getWordLength());

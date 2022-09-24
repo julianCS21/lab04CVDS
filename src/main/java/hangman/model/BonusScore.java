@@ -9,10 +9,8 @@ package hangman.model;
  */
 public class BonusScore implements GameScore {
 
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
+
+
 	public int calculateScore (int correctCount, int incorrectCount) throws GameScoreException{
 		if(correctCount < 0 || incorrectCount < 0) throw new GameScoreException(GameScoreException.PARAMETRO_INVALIDO);
 		return Math.max(correctCount*10 - incorrectCount*5,0);

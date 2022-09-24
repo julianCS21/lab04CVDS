@@ -1,17 +1,15 @@
 package hangman.model;
 
-public interface GameScore{
+public interface GameScore {
 
-    public interface GameScore {
-        /**
-         * Calcula el puntaje Hangman
-         * @pre - El puntaje minimo es cero
-         * 		- El puntaje inicia con 0 o 100 puntos
-         * @pos  calcular el puntaje final de juego
-         * @param correctCount puntos de bonificacion por cada letra correcta
-         * @param incorrectCount puntos de penalizacion por cada letra incorrecta
-         * @return Retorna el puntaje final del juego
-         * @throws PARAMETRO_INVALIDO - si alguno de los parametros no es valido
-         */
-        public int calculateScore (int correctCount, int incorrectCount)throws GameScoreException;
-    }
+    /**
+     * Es el metodo que se encarga de calcular los puntajes del juego
+     * @pre El puntaje mínimo es 0
+     * @pos El puntaje quedará actualizado segun el esquema elegido
+     * @param correctCount, es el conteo correcto
+     * @param incorrectCount, es el conteo incorrecto
+     * @return es el puntaje obtenido al final
+     */
+    int calculateScore(int correctCount, int incorrectCount) throws IllegalAccessException;
+
+}

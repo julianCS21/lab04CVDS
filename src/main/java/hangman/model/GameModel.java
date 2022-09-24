@@ -48,19 +48,16 @@ public class GameModel {
         
     }
 
-    public  void gameScoreCalculator(int correctCount, int incorrectCount){
-        gameScore = this.points.calculateStore(correctCount,incorrectCount);
 
-    }
     
     //method: reset
     //purpose: reset this game model for a new game
-    public void reset(){
+    public void reset() throws IllegalAccessException {
         randomWord = selectRandomWord();
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = this.points.calculateStore(0,0);
+        gameScore = this.points.calculateScore(0,0);
     }
 
     //setDateTime
