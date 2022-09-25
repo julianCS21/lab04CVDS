@@ -43,6 +43,10 @@ principio de inversión de dependencias:
 ### Parte I
 
 1. Clone el proyecto (no lo descargue!).
+
+![image](https://user-images.githubusercontent.com/108955358/192125713-3a490cbe-3eab-4ad8-adbf-efbf65f27782.png)
+![image](https://user-images.githubusercontent.com/108955358/192125720-57317067-ef57-4619-9bbf-1fe655d155a2.png)
+
    
 2. A partir del código existente, implemente sólo los cascarones del
    modelo antes indicado.
@@ -60,6 +64,9 @@ principio de inversión de dependencias:
 	```
 
 5. Actualice el archivo `pom.xml` e incluya las dependencias para la ultima versión de JUnit y la versión del compilador de Java a la versión 8 .
+
+![image](https://user-images.githubusercontent.com/108955358/192125862-d3d67b78-ddb9-402d-8f0d-e6ee24c76d80.png)
+
    
 
 6. Teniendo en cuenta dichas especificaciones, en la clase donde se
