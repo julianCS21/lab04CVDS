@@ -16,13 +16,16 @@ import hangman.model.dictionary.FrenchDictionaryDataSource;
 import hangman.view.HangmanNoviolentoPanel;
 import hangman.view.HangmanPanel;
 
+import java.util.Dictionary;
+
 public class HangmanFactoryServices extends com.google.inject.AbstractModule {
 
     @Override
     protected void configure() {
         bind(GameScore.class).to(OriginalScore.class);
+        bind(HangmanDictionary.class).to(FrenchDictionaryDataSource.class);
+        bind(Language.class).to(French.class);
         bind(GameScore.class).to(BonusScore.class);
-        bind(GameScore.class).to(PowerScore.class);
 
     }
 

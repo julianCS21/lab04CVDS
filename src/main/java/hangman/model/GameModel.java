@@ -17,7 +17,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-
 public class GameModel {
     private int incorrectCount;
     private int correctCount;
@@ -25,7 +24,7 @@ public class GameModel {
     private int gameScore;
     private int[] lettersUsed;
 
-    private GameScore points;
+    private GameScore gamePoints;
     
     
     private HangmanDictionary dictionary;
@@ -44,7 +43,7 @@ public class GameModel {
         incorrectCount = 0;
         correctCount = 0;
         gameScore = 100;
-        this.points = points;
+        this.gamePoints = points;
         
     }
 
@@ -57,7 +56,7 @@ public class GameModel {
         randomWordCharArray = randomWord.toCharArray();
         incorrectCount = 0;
         correctCount = 0;
-        gameScore = this.points.calculateScore(0,0);
+        gameScore = this.gamePoints.calculateScore(0,0);
     }
 
     //setDateTime

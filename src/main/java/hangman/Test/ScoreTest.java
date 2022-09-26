@@ -89,8 +89,8 @@ public class ScoreTest {
     }
 
 
-    @Test(expected = GameScoreException.class)
-    public void DadoUnConteoCorrectoYUnConteoIncorrectoNegativoConUnModeloPowerEntoncesDeberiaArrojarCalcular() throws IllegalAccessException {
+
+    public void DadoUnConteoCorrectoYUnConteoIncorrectoNegativoConUnModeloPowerEntoncesDeberiaCalcular() throws IllegalAccessException {
         //arrange
         Score = new PowerScore();
 
@@ -99,7 +99,7 @@ public class ScoreTest {
         int result = Score.calculateScore(3,2);
 
         //assert
-        assertEquals(result,50);
+        assertEquals(result,139);
 
     }
 
